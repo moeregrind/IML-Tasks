@@ -66,7 +66,7 @@ class Model(object):
         from sklearn.gaussian_process.kernels import DotProduct, RBF, Matern, RationalQuadratic, WhiteKernel
         
         #weights are adjusted such that we automatically select the best kernel
-        gpr = GaussianProcessRegressor(kernel=  RBF(), random_state= 0)
+        gpr = GaussianProcessRegressor(kernel=RBF(), normalize_y=True, random_state=0)
        
         gpr.fit(X_train, y_train)
         
